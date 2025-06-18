@@ -1,0 +1,167 @@
+/* estilos.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f0f0f0;
+}
+
+.navbar {
+  background-color: #333;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar a {
+  display: block;
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: #575757;
+}
+
+.carrusel {
+  display: flex;
+  overflow: auto;
+}
+
+.slide {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.galeria {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.filtro {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  transition: all 0.5s;
+}
+
+.filtro1 {
+  filter: grayscale(100%);
+}
+.filtro1:hover {
+  filter: none;
+}
+
+.filtro2 {
+  filter: sepia(100%);
+}
+.filtro2:hover {
+  filter: hue-rotate(90deg);
+}
+
+.filtro3 {
+  filter: blur(3px);
+}
+.filtro3:hover {
+  filter: none;
+}
+
+.overlay-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.overlay-item {
+  position: relative;
+  width: 250px;
+}
+
+.overlay-item img {
+  width: 100%;
+  display: block;
+}
+
+.texto-superpuesto {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  opacity: 0;
+  animation: aparecer 1s forwards;
+}
+
+.overlay-item:hover .texto-superpuesto {
+  opacity: 1;
+}
+
+@keyframes aparecer {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.animada img {
+  width: 200px;
+  margin: 10px;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+.fade-in {
+  animation-delay: 0.5s;
+}
+
+.zoom-in {
+  animation: zoomIn 1s forwards;
+  animation-delay: 1s;
+}
+
+.mover {
+  animation: mover 1.5s forwards;
+  animation-delay: 1.5s;
+}
+
+@keyframes fadeIn {
+  to {opacity: 1;}
+}
+
+@keyframes zoomIn {
+  0% {transform: scale(0.5); opacity: 0;}
+  100% {transform: scale(1); opacity: 1;}
+}
+
+@keyframes mover {
+  0% {transform: translateX(-100px); opacity: 0;}
+  100% {transform: translateX(0); opacity: 1;}
+}
+
+.collage {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.col-img {
+  width: 150px;
+  filter: contrast(120%);
+  transition: transform 0.3s;
+}
+
+.col-img:hover {
+  transform: scale(1.1) rotate(2deg);
+}
